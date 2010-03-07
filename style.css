@@ -4,13 +4,13 @@ body {
 }
 
 #header {
-	width: 80%;
+	width: 85%;
 
 	margin-left: 5%;
 	padding-left: 5%;
 
 	margin-right: 5%;
-	padding-right: 5%;
+	padding-right: 0%;
 
 	border-bottom: thin solid white;
 
