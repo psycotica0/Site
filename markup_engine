@@ -1,1 +1,2 @@
-nme
+#!/bin/sh
+nme --body
