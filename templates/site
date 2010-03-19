@@ -1,0 +1,49 @@
+#!/usr/bin/php
+<?php
+
+require_once(dirname(__FILE__) . '/arguments');
+
+$args = getArguments($argc, $argv);
+
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> <?php echo $args['Title']; ?> - psycoti.ca/0/</title>
+
+<link rel="stylesheet" href="style.css" />
+<link rel="openid.server" href="http://id.psycoti.ca/" />
+<link rel="openid.delegate" href="http://id.psycoti.ca/" />
+<?php
+if (!empty($args['Next'])) {
+	echo "<link rel='next' href='" . $args['Next'] . "' />\n";
+}
+if (!empty($args['Previous'])) {
+	echo "<link rel='previous' href='" . $args['Previous'] . "' />\n";
+}
+?>
+</head>
+<body>
+
+<div id="header">
+<h1> psycoti.ca/0/ </h1>
+</div>
+
+<div id="menu">
+<ul>
+<li> <a href="http://github.com/psycotica0"> Code </a> </li>
+<li> <a> Projects </a> </li>
+<li> <a> Ideas </a> </li>
+<li> <a> Stuff </a> </li>
+</ul>
+</div>
+
+<div id="content">
+<?php echo $args['Content']; ?>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?php
+
+/* This function takes in the arguments and breaks them into an associative array */
+/* It assumes that the arguments are alternating key value pairs */
+/* Also, any pipe delimited arguments are broken into an array */
+function getArguments($argc, $argv) {
+	$result = array();
+	for ($i = 1; $i < $argc; $i+=2) {
+		$exploded = explode('|', $argv[$i + 1]);
+		if (count($exploded) == 1) {
+			$result[$argv[$i]] = $exploded[0];
+		} else if (count($exploded) == 2 && empty($exploded[0])) {
+			/* Read this content from a file */
+			$result[$argv[$i]] = file_get_contents($exploded[1]);
+		} else {
+			$result[$argv[$i]] = $exploded;
+		}
+	}
+
+	return $result;
+}
