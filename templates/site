@@ -22,7 +22,7 @@ if (!empty($args['NextLink'])) {
 	echo "<link rel='next' href='" . $args['NextLink'] . "' />\n";
 }
 if (!empty($args['PreviousLink'])) {
-	echo "<link rel='previous' href='" . $args['PreviousLink'] . "' />\n";
+	echo "<link rel='prev' href='" . $args['PreviousLink'] . "' />\n";
 }
 ?>
 </head>
