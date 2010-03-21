@@ -18,7 +18,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo "<link rel='stylesheet' href='" . $args['Root'] . "static/style.css' />\n";
 echo "<link rel='openid.server' href='http://id.psycoti.ca/' />\n";
 echo "<link rel='openid.delegate' href='http://id.psycoti.ca/' />\n";
-echo "<link href='" . $args['Root'] . "feed.atom' type='application/atom+xml' rel='alternate'/>\n";
+echo "<link rel='alternate' type='application/atom+xml' href='" . $args['Root'] . "feed.atom' />\n";
 if (!empty($args['NextLink'])) {
 	echo "<link rel='next' href='" . $args['Root'] . "articles/" . $args['NextLink'] . "' />\n";
 }
