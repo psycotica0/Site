@@ -26,7 +26,7 @@ function atomDate($date) {
 <entry>
 	<title><?php print($args['Title']) ?></title>
 	<?php 
-		print('<link rel="alternate" type="text/html" href="http://psycoti.ca/id/' . $args['ID'] . '"/>');
+		print('<link rel="alternate" type="text/html" href="http://psycoti.ca/articles/' . $args['Self'] . '"/>');
 	?>
 	<?php 
 		print('<id>http://psycoti.ca/id/' . $args['ID'] . '"</id>');

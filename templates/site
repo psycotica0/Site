@@ -24,6 +24,9 @@ if (!empty($args['NextLink'])) {
 if (!empty($args['PreviousLink'])) {
 	echo "<link rel='prev' href='" . $args['PreviousLink'] . "' />\n";
 }
+if (!empty($args['Self'])) {
+	echo "<link rel='self' href='" . $args['Self'] . "' />\n";
+}
 ?>
 </head>
 <body>
