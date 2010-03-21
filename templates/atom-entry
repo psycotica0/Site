@@ -28,7 +28,7 @@ function atomDate($date) {
 		print('<link rel="alternate" type="text/html" href="http://psycoti.ca/0/articles/' . $args['Self'] . '"/>');
 	?>
 	<?php 
-		print('<id>http://psycoti.ca/0/id/' . $args['ID'] . '"</id>');
+		print('<id>http://psycoti.ca/0/id/' . $args['ID'] . '</id>');
 	?>
 	<updated><?php print(atomDate($args['ModificationDate'])) ?></updated>
 	<published><?php print(atomDate($args['CreationDate'])) ?></published>
