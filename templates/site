@@ -27,6 +27,9 @@ if (!empty($args['PreviousLink'])) {
 if (!empty($args['Self'])) {
 	echo "<link rel='self' href='" . $args['Self'] . "' />\n";
 }
+if (!empty($args['ID'])) {
+	echo "<link rel='canonical' href='../id/" . $args['ID'] . "' />\n";
+}
 ?>
 </head>
 <body>
