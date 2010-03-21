@@ -14,23 +14,22 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 <head>
 <title> <?php echo $args['Title']; ?> - psycoti.ca/0/</title>
 
-<base href="http://psycoti.ca/0/" />
-<link rel="stylesheet" href="static/style.css" />
-<link rel="openid.server" href="http://id.psycoti.ca/" />
-<link rel="openid.delegate" href="http://id.psycoti.ca/" />
-<link href="feed.atom" type="application/atom+xml" rel="alternate"/>
 <?php
+echo "<link rel='stylesheet' href='" . $args['Root'] . "static/style.css' />\n";
+echo "<link rel='openid.server' href='http://id.psycoti.ca/' />\n";
+echo "<link rel='openid.delegate' href='http://id.psycoti.ca/' />\n";
+echo "<link href='" . $args['Root'] . "feed.atom' type='application/atom+xml' rel='alternate'/>\n";
 if (!empty($args['NextLink'])) {
-	echo "<link rel='next' href='articles/" . $args['NextLink'] . "' />\n";
+	echo "<link rel='next' href='" . $args['Root'] . "articles/" . $args['NextLink'] . "' />\n";
 }
 if (!empty($args['PreviousLink'])) {
-	echo "<link rel='prev' href='articles/" . $args['PreviousLink'] . "' />\n";
+	echo "<link rel='prev' href='" . $args['Root'] . "articles/" . $args['PreviousLink'] . "' />\n";
 }
 if (!empty($args['Self'])) {
-	echo "<link rel='self' href='articles/" . $args['Self'] . "' />\n";
+	echo "<link rel='self' href='" . $args['Root'] . "articles/" . $args['Self'] . "' />\n";
 }
 if (!empty($args['ID'])) {
-	echo "<link rel='canonical' href='id/" . $args['ID'] . "' />\n";
+	echo "<link rel='canonical' href='" . $args['Root'] . "id/" . $args['ID'] . "' />\n";
 }
 ?>
 </head>
