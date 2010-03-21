@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/arguments');
 
 $args = getArguments($argc, $argv);
 ?>
-<div id="bio" bio="vcard">
+<div id="bio" class="vcard">
 <?php
 echo "<img class='photo' src='" . $args['Root'] . "static/avatar.png' alt='My Avatar' />\n";
 ?>
