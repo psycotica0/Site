@@ -34,11 +34,7 @@ function atomDate($date) {
 		<name>Christopher Vollick</name>
 		<email>psycotica0@gmail.com</email>
 	</author>
-	<generator uri="http://git.psycoti.ca/?a=summary&p=GitSite">
-		GitSite
-	</generator>
-	<icon>
-		http://psycoti.ca/0/static/avatar.png
-	</icon>
+	<generator uri="http://git.psycoti.ca/%3fa=summary%26p=GitSite">GitSite</generator>
+	<icon>http://psycoti.ca/0/static/avatar.png</icon>
 	<?php print($args['Content']) ?>
 </feed>
