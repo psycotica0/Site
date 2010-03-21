@@ -25,10 +25,10 @@ function atomDate($date) {
 <entry>
 	<title><?php print($args['Title']) ?></title>
 	<?php 
-		print('<link rel="alternate" type="text/html" href="http://psycoti.ca/articles/' . $args['Self'] . '"/>');
+		print('<link rel="alternate" type="text/html" href="http://psycoti.ca/0/articles/' . $args['Self'] . '"/>');
 	?>
 	<?php 
-		print('<id>http://psycoti.ca/id/' . $args['ID'] . '"</id>');
+		print('<id>http://psycoti.ca/0/id/' . $args['ID'] . '"</id>');
 	?>
 	<updated><?php print(atomDate($args['ModificationDate'])) ?></updated>
 	<published><?php print(atomDate($args['CreationDate'])) ?></published>
