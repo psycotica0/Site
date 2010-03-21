@@ -97,3 +97,23 @@ P {
 	margin-top: 0em;
 	margin-bottom: 0.5em;
 }
+
+#bio {
+	margin-bottom: 1em;
+}
+
+#bio .nickname {
+	/* So, this is kind of weird. */
+	/* Mostly, it seemed like good metadata, but it's redundant to put it on screen. */
+	display: none;
+}
+
+#recent h2 a {
+	color: white;
+	text-decoration: underline;
+}
+
+#recent h2 a:hover {
+	color: #dfdfdf;
+	text-decoration: underline;
+}
