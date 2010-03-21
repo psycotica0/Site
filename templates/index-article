@@ -1,0 +1,10 @@
+#!/usr/bin/php
+<?php
+
+require_once(dirname(__FILE__) . '/arguments');
+
+$args = getArguments($argc, $argv);
+?>
+<hr />
+<h2> <?php echo "<a href='" . $args['Self'] . "'> " . $args['Title'] . " </a>"; ?></h2>
+<?php echo $args['Content']; ?>
