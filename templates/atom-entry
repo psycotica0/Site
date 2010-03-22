@@ -33,6 +33,6 @@ function atomDate($date) {
 	<updated><?php print(atomDate($args['ModificationDate'])) ?></updated>
 	<published><?php print(atomDate($args['CreationDate'])) ?></published>
 	<content type="html">
-			<?php print(htmlentities($args['Content'])) ?>
+			<?php print(htmlspecialchars($args['Content'])) ?>
 	</content>
 </entry>
