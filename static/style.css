@@ -51,6 +51,8 @@ body {
 	margin-top: 0;
 	padding-top: 0;
 
+	margin-left: -5%;
+
 	border-bottom: thin solid white;
 }
 
@@ -71,10 +73,18 @@ body {
 
 #content a {
 	color: white;
+
+	text-decoration: none;
+
+	border-top: thin solid white;
+	border-bottom: thin solid white;
 }
 
 #content a:hover {
-	color: #dfdfdf;
+	border-left: thin solid white;
+	border-right: thin solid white;
+	border-top: none;
+	border-bottom: none;
 }
 
 P { 
@@ -95,14 +105,4 @@ P {
 #recent h1 {
 	border-top: thin white solid;
 	border-bottom: thin white solid;
-}
-
-#recent h1 a {
-	color: white;
-	text-decoration: none;
-}
-
-#recent h1 a:hover {
-	color: #dfdfdf;
-	text-decoration: none;
 }
