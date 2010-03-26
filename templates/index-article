@@ -5,6 +5,5 @@ require_once(dirname(__FILE__) . '/arguments');
 
 $args = getArguments($argc, $argv);
 ?>
-<hr />
 <h2> <?php echo "<a href='" . $args['Root'] . "articles/" . $args['Self'] . "'> " . $args['Title'] . " </a>"; ?></h2>
 <?php echo $args['Content']; ?>
