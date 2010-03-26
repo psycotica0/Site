@@ -72,10 +72,10 @@ P {
 
 #recent h2 a {
 	color: white;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 #recent h2 a:hover {
 	color: #dfdfdf;
-	text-decoration: underline;
+	text-decoration: none;
 }
