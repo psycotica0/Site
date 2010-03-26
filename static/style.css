@@ -62,6 +62,21 @@ body {
 	padding-left: 1em;
 }
 
+#content h3 {
+	border-left: thin solid white;
+	border-top: thin solid white;
+
+	padding-left: 1em;
+}
+
+#content a {
+	color: white;
+}
+
+#content a:hover {
+	color: #dfdfdf;
+}
+
 P { 
 	margin-top: 0em;
 	margin-bottom: 0.5em;
