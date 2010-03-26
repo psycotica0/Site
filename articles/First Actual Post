@@ -1,0 +1,97 @@
+Ok, so, I'm calling this a win.
+
+I've got my new site engine up and running.
+I've called it GitSite for now, and it's currently located [[http://git.psycoti.ca/?a=summary&p=GitSite | in my Git Area]].
+
+It's called GitSite because the site it generates from is a git repo.
+This site, for example, is [[http://git.psycoti.ca/?a=summary&p=Site | here]].
+
+I still have a lot to do with this thing.
+I've got more data to add to the template, a couple changes to make to the theme, a couple features to add to the engine, but it's at this point workable.
+
+At this point I'm going to talk a bit about GitSite.
+
+== GitSite, a description ==
+
+So, the basic idea here was to make a site engine for publish articles (Notice how I'm avoiding the term 'blog'?) that was based off static files and git.
+
+So, all of the pages that are being served here are static. All of the html, conversion, templating, etc was all done on the server prior to it being available.
+By the time it's accessable, it's a collection of files with a lot of duplication.
+
+I like that.
+
+Also, it's all Git, and, for now at least, public.
+Not for updates, but if you wanted to download the entire source of my site you'd just need to do:
+{{{
+git clone git://psycoti.ca/Site
+}}}
+
+Isn't that sick?
+
+I think that's sick.
+
+I will now go through the what one can expect to find in a GitSite source repo.
+
+=== Articles ===
+
+This is pretty simple.
+
+There's a directory called 'articles'.
+
+Each file in this directory is a single article.
+
+The name of the file is the title of the article.
+
+The contents of the file are the contents of the article, potentially in some kind of markup.
+
+That's about it.
+
+=== Templates ===
+
+Also pretty simple.
+We've got a number of files with very specific titles in here.
+
+Each one is expected to be an executable script, and the data is passed to it as alternating keys and values on the command line.
+
+So, for example, to call the 'bork' template with content of 'blah' and title of 'dribble' it would attempt to execute
+{{{
+./templates/bork Content 'blah' Title 'dribble'
+}}}
+
+Pretty simple.
+
+Currently the following templates exist: (Note: This is very likely going to change very rapidly, but this is just to give an idea)
+* article - This gets called with a Content of the output of the markup engine for each article. It sets up the html for just the article portion of the page.
+* site - This gets called for every html page. It is the basic template for everything surrounding content on the site.
+* index - This is used to generate the index page's content. The content here is the excerpts from the most recent article, already computed.
+* index-article - This is called on the article excerpts meant to go on the index page.
+* atom-entry - This gets called for the top few articles to wrap it in whatever markup is desired for the atom-entry.
+* atom-feed - This is called on the concatenated output of all the atom-entrys and wraps up the rest of the feed.
+
+So, that's that, for now.
+
+Like I said, I have a couple more I'm planning to add, or break up, or make optional, as I add more functionality or make it nicer for others.
+
+That's the basis of the templates though.
+
+=== Options ===
+
+There are a couple of things, that I'm going to call options, in the engine.
+
+These are things like which markup engine to use, or how urls should be encoded.
+
+Currently this is also done with executable scripts in the directory. 
+
+In this case they act like filters, with the thing they're supposed to act upon as stdin and the result as stdout.
+
+Other than that, the script doesn't care how they work to come up with their answers. The markup engine could be sed, or PHP, or Markdown, or NME (Which I'm currently using), or cat (Verbatim).
+
+== Wrap Up ==
+
+So, that's pretty much it. 
+
+I've got this thing now, and I like it.
+
+Assumedly it's going to get better.
+
+I'll probably keep you posted as I go.
