@@ -5,4 +5,4 @@
 # Maybe it should to escaping, but at this point it won't
 echo '<pre>'
 cat
-echo '</pre>
+echo '</pre>'
