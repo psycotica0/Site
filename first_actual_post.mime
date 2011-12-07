@@ -6,10 +6,10 @@ Content-Type: text/creole
 Ok, so, I'm calling this a win.
 
 I've got my new site engine up and running.
-I've called it GitSite for now, and it's currently located [[http://git.psycoti.ca/?a=summary&p=GitSite | in my Git Area]].
+I've called it GitSite for now, and it's currently located [[http://git.psycoti.ca/?a=summary&amp;p=GitSite | in my Git Area]].
 
 It's called GitSite because the site it generates from is a git repo.
-This site, for example, is [[http://git.psycoti.ca/?a=summary&p=Site | here]].
+This site, for example, is [[http://git.psycoti.ca/?a=summary&amp;p=Site | here]].
 
 I still have a lot to do with this thing.
 I've got more data to add to the template, a couple changes to make to the theme, a couple features to add to the engine, but it's at this point workable.
