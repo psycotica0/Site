@@ -5,7 +5,7 @@
 
 redo-ifchange "$1.mime"
 
-times="$(git log --pretty=format:%at "$1.mime")"
+times="$(git log --follow --pretty=format:%at "$1.mime")"
 # This is the last time a change was made
 modify_time="$(echo "$times" | sed -n '1p')"
 # This is the first time the file was added
