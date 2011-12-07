@@ -2,7 +2,7 @@
 
 # This script turns plain text into html
 # It does this just by wrapping it in pre.
-# Maybe it should to escaping, but at this point it won't
+# It also escapes & and < >
 echo '<pre>'
-cat
+cat | sed 's/&/\&amp;/g' | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g'
 echo '</pre>'

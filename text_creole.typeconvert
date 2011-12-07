@@ -1,4 +1,5 @@
 #!/bin/sh
 
 # This uses nme to turn creole into html
-nme --body
+# It also should escape ampersands
+nme --body | sed 's/&/\&amp;/g'
