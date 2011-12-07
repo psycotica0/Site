@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This just passes through the html unchanged
+# It could do cleanup or filtering, but it doesn't.
+cat

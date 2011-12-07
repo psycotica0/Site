@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# This uses nme to turn creole into html
+nme --body

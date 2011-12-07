@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This script turns plain text into html
+# It does this just by wrapping it in pre.
+# Maybe it should to escaping, but at this point it won't
+echo '<pre>'
+cat
+echo '</pre>
