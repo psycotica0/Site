@@ -1,0 +1,2 @@
+# Since we use redo, ignore its data
+.redo/
