@@ -66,6 +66,7 @@ So, for example, to call the 'bork' template with content of 'blah' and title of
 Pretty simple.
 
 Currently the following templates exist: (Note: This is very likely going to change very rapidly, but this is just to give an idea)
+
 * article - This gets called with a Content of the output of the markup engine for each article. It sets up the html for just the article portion of the page.
 * site - This gets called for every html page. It is the basic template for everything surrounding content on the site.
 * index - This is used to generate the index page's content. The content here is the excerpts from the most recent article, already computed.

@@ -28,8 +28,10 @@ if [ -n "$next" ]; then
 	echo "<a href=\"$next.html\" rel=\"next\"> Next </a>"
 fi
 echo "</div>"
-echo " <h1> $title </h1>
-	$body
+echo "<div class=\"content\">
+<h1> $title </h1>
+$body
+</div>
 </body>
 </html>"
 ' > "$3"
