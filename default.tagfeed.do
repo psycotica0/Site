@@ -2,11 +2,11 @@
 # This file makes feed, for each tag, of recent articles, etc.
 
 tag="$1"
-author_name="Name"
-author_email="email@domain.com"
-icon="http://icon.com"
+author_name="Christopher Vollick"
+author_email="0@psycoti.ca"
+icon="http://psycoti.ca/0/static/avatar.png"
 title="Tag: $tag"
-home="http://example.com"
+home="http://psycoti.ca/0"
 this_tag="$home/$tag"
 this_feed="$this_tag/feed.atom"
 
@@ -42,7 +42,7 @@ grep "^$tag " < "tagindex" | cut -d ' ' -f 2- | tac | while read file; do
 	echo "		<updated>$mod_date</updated>"
 	# Now spit out the body
 	echo '		<content type="html">'
-	sed '1,/^$/d' < "$file.converted" | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g'
+	sed '1,/^$/d' < "$file.converted" | sed 's/&/\&amp;/g' |  sed 's/</\&lt;/g' | sed 's/>/\&gt;/g'
 	echo '		</content>'
 	echo '	</entry>'
 done
