@@ -3,7 +3,7 @@
 
 redo-ifchange all
 
-ls *.html | while read line; do
+ls *.html | sed '/^index.html$/d' | while read line; do
 	tag="$(echo "$line" | sed 's/.*\.\([^.]*\)\.html$/\1/')"
 	filename="$(basename "$line" ".$tag.html")"
 	mkdir -p "$tag"

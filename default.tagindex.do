@@ -8,7 +8,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.or
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <title>'
-echo "Tag: $tag"
+echo "Tag: $tag - psycoti.ca/0/ "
 echo '</title>
 <link rel="stylesheet" href="../static/style.css" />
 <link rel="openid.server" href="http://id.psycoti.ca/" />
@@ -25,7 +25,7 @@ redo-ifchange "tagindex"
 
 tags="$(cut -d ' ' -f 1 < "tagindex" | sort | uniq)"
 
-echo "<div id='tags'><ul>"
+echo "<div id='tags'>Tags:<ul>"
 for t in $tags; do
 	if [ "$t" = "$tag" ]; then
 		echo "<li class=\"current\"> $t </li>"
