@@ -16,6 +16,9 @@ echo '</title>
 <link rel="alternate" type="application/atom+xml" href="feed.atom" />
 </head>
 <body>
+<div id="header">
+<h1> psycoti.ca/0/ </h1>
+</div>
 '
 
 echo "<h1> Tag: $tag </h1>"

@@ -19,8 +19,11 @@ echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3
 <link rel=\"openid.delegate\" href=\"http://id.psycoti.ca/\" />
 <link rel=\"alternate\" type=\"application/atom+xml\" href=\"feed.atom\" />
 </head>
-<body>"
-echo "<div class=\"navigation\">"
+<body>
+<div id=\"header\">
+<h1> psycoti.ca/0/ </h1>
+</div>"
+echo "<div id=\"navigation\">"
 if [ -n "$prev" ]; then
 	echo "<a href=\"$prev.html\" rel=\"prev\"> Prev </a>"
 fi
@@ -28,7 +31,7 @@ if [ -n "$next" ]; then
 	echo "<a href=\"$next.html\" rel=\"next\"> Next </a>"
 fi
 echo "</div>"
-echo "<div class=\"content\">
+echo "<div id=\"content\">
 <h1> $title </h1>
 $body
 </div>
