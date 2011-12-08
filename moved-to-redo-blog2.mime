@@ -1,0 +1,123 @@
+Title: Moved To Redo-Blog2
+Content-Type: text/creole
+Tag: main
+Tag: article
+Tag: redo-blog2
+
+Ok, the wait is over!
+
+I've finally "finished" work on [[https://github.com/psycotica0/redo-blog2 | redo-blog2]], which became the successor of GitSite.
+
+I originally wrote GitSite because I liked the concept of some set of static files where metadata was stored on the FileSystem and in Git.
+When I published it, I was happy with where I'd gotten.
+There were things I wanted it to do that I hadn't gotten around to, but that was alright.
+At first.
+
+Very quickly I started wanting to do things with it that it wasn't built around.
+Things like having articles and other things together, without everything being an article.
+
+But I did nothing.
+Rather than fix the issues I just held off publishing anything.
+
+One of the other issues with GitSite was that it was a big script that ran from top to bottom.
+It wasn't super easy to handle.
+Also, it built everything all the time.
+
+Around this time I also saw [[https://github.com/apenwarr/redo | redo]], which is a build system (like Make) that is based off shell scripts.
+It's less like Make, and more like a collection of tools you can string together to make your own build systems.
+Kind of.
+
+Anyway, I'd been looking for something to play around with redo on, and I had a site built out of files that I wanted a more modular and efficient build system for.
+Bam!
+
+So I thought about it for a bit and then did nothing.
+[[https://singpolyma.net | Stephen]] eventually wrote some scripts and emailed me a tarball of them called redo-blog based on things I'd said I'd wanted but never done.
+I liked it some, but it wasn't quite what I wanted.
+
+The biggest breakthrough in redo-blog, which solved an issue I was blocked by on the imaginary thing in my head, was storing intermediate data in YAML.
+It allowed redo to build from one file to another while keeping a bunch of metadata around also.
+
+So, then a long time passed where I moped around not publishing things.
+
+Finally I sat down, interested again, and wrote the beginnings of redo-blog2.
+I built it from the ground up to satisfy some of the issues I'd had with GitSite.
+Namely, the base organizational structure in redo-blog2 is "tags"
+Without tags, they don't get deployed or built.
+Articles can have "article" tags, stories can have "story" tags, in then I end up with "/article/blah.html" and "/story/blee.html".
+I was happy.
+
+Then I did nothing for a while.
+Yesterday I finally got around to actually finishing up the final needs I had for the system and moving this site over to it.
+
+== Redo-Blog2: A description ==
+Ok, so.
+
+First, one needs [[https://github.com/apenwarr/redo | redo]].
+Or at the very least minimal/do from that repo.
+Minimal/do is a script that builds everything every time, so it's not super efficient to dev with, but it does work the same as a more full redo system.
+
+Next, all my pages are in files like blah.mime.
+This is because they are in a pseudo-mime-format.
+Here's an example:
+{{{
+Title: First Article
+Content-Type: text/plain
+Tag: article
+Tag: test
+
+This is the body of the article here.
+Isn't it exciting that I can put text here?
+}}}
+
+So, the first part of the file is Headers.
+These can be arbitrary data, but obviously if a script later doesn't use them, they go away.
+
+Then there's a blank line.
+Everything else is the page contents.
+
+The data path for redo-blog2 goes as follows:
+# First, blah.mime becomes blah.augmented.
+	This involves adding auto-generated Headers to the file to augment the manual ones the author wrote.
+	In my case, this is where Git is probed for info about the file.
+# blah.augmented then uses a typeconvert script to turn the body from whatever Content-Type was specified into html.
+	If no type is given it assumes text/plain.
+	This is then recombined with the headers into blah.converted
+# This is then run through a tagtemplate for every tag it is a member of to generate a different html file of the form blah.tag.html
+	The reason for this is that one can have a different output structure for the "story" tag, or the "video" tag or whatever.
+	If one doesn't have a special tagtemplate it will make one automatically out of the default.
+# Finally, the deploy step moves blah.tag.html into tag/blah.html
+
+There's a lot of other stuff it does around this, but that's the main concept.
+
+=== Using It ===
+For the author, adding a new article involves making a new mime file and then running "redo deploy".
+It will only rebuild what it has to (or maybe slightly more) and then move it into place.
+
+The main places where someone setting this up has to touch is default.tagtemplate.do, default.tagindex.do, and default.tagfeed.do.
+
+Into default.tagfeed.do one mostly just has to change the data like "Author Name", Email address, Website, etc.
+
+default.tagindex.do is the file that constructs the files that go into tag/index.html and includes a listing of all items with that tag.
+You must therefore change that file to include the structure you want.
+
+default.tagtemplate.do is slightly more gross. It creates the files that create the blah.tag.html files.
+Other than that, though, you just have to change the markup in it to be the one you want.
+
+It's feasbile that the only changes you'd need to make are removing my data.
+The markup is (I think) pretty standard and most of what I do comes with styling.
+
+== Conclusion ==
+So, so far, I'm quite happy with this system.
+I don't yet know of things that will keep me from using it.
+
+I'm sure they're out there, but I haven't come across them yet, and that's pretty good.
+
+The biggest issue, in general, is that redo-blog2 isn't a script, like GitSite was.
+It's more a concept, or idea.
+
+The scripts in [[http://github.com/psycotica0/redo-blog2]] are what I based the scripts in [[http://github.com/psycotica0/Site]] off, but in the end they are disjoint.
+They're related in concept, but there's no connection between them.
+
+So, if you want to adapt it to work with your site, you can start with either this site, or the redo-blog2 repo, but it's likely there won't be a lot of cross polination.
+
+I'm alright with that for now.
