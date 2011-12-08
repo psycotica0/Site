@@ -10,6 +10,11 @@ body {
 	text-align: right;
 }
 
+#header h1 a {
+	color: white;
+	text-decoration: none;
+}
+
 #content {
 	border: thin solid white;
 	padding: 5%;

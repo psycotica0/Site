@@ -17,7 +17,7 @@ echo '</title>
 </head>
 <body>
 <div id="header">
-<h1> psycoti.ca/0/ </h1>
+<h1> <a href="http://psycoti.ca/0/"> psycoti.ca/0/ </a> </h1>
 </div>
 '
 

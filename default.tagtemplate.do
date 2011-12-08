@@ -30,7 +30,7 @@ echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3
 </head>
 <body>
 <div id=\"header\">
-<h1> psycoti.ca/0/ </h1>
+<h1> <a href=\"http://psycoti.ca/0/\"> psycoti.ca/0/ </a> </h1>
 </div>"
 echo "<div id=\"navigation\">"
 if [ -n "$prev" ]; then
