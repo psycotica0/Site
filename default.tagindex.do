@@ -21,6 +21,23 @@ echo '</title>
 </div>
 '
 
+redo-ifchange "tagindex"
+
+tags="$(cut -d ' ' -f 1 < "tagindex" | sort | uniq)"
+
+echo "<div id='tags'><ul>"
+for t in $tags; do
+	if [ "$t" = "$tag" ]; then
+		echo "<li class="current"> $t </li>"
+	else
+		echo "<li> <a href="../$t/index.html"> $t </a> </li>"
+	fi
+done
+echo "</ul></div>"
+
+echo '<div id="content">
+'
+
 echo "<h1> Tag: $tag </h1>"
 echo '<ol>'
 
@@ -37,5 +54,6 @@ done
 
 echo '</ol>'
 
-echo '</body>
+echo '</div>
+</body>
 </html>'
