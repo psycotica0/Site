@@ -5,7 +5,7 @@ redo-ifchange "$1.augmented"
 
 # Pull the type out of the file to figure out how to build it
 # Also, convert the / in the type into _ for filesystem niceness
-type="$(sed -n '/^Content-Type:/s/^Content-Type:\(.*\)$/\1/p' < "$1.augmented" | tr -d ' ' | tr '/' '_')"
+type="$(./extract_headers "Content-Type" < "$1.augmented" | tr '/' '_')"
 if [ -z "$type" ]; then
 	echo "Warning: No Content Type. Assuming text/plain" >&2
 	type="text_plain"

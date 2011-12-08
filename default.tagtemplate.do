@@ -4,13 +4,13 @@
 echo '#!/bin/sh
 
 contents="$(cat)"
-title="$(echo "$contents" | sed -n "/^Title:/s/^Title:[ 	]//p")"
+title="$(echo "$contents" | ./extract_headers "Title")"
 body="$(echo "$contents" | sed "1,/^$/d")"
-next="$(echo "$contents" | sed -n "/^Next-Link:/s/^Next-Link:[ 	]*//p")"
-prev="$(echo "$contents" | sed -n "/^Previous-Link:/s/^Previous-Link:[ 	]*//p")"
-created="$(echo "$contents" | sed -n "/^Date-Created:/s/^Date-Created:[ 	]*//p")"
-modified="$(echo "$contents" | sed -n "/^Date-Modified:/s/^Date-Modified:[ 	]*//p")"
-id="$(echo "$contents" | sed -n "/^ID:/s/^ID:[ 	]*//p")"
+next="$(echo "$contents" | ./extract_headers "Next-Link")"
+prev="$(echo "$contents" | ./extract_headers "Previous-Link")"
+created="$(echo "$contents" | ./extract_headers "Date-Created")"
+modified="$(echo "$contents" | ./extract_headers "Date-Modified")"
+id="$(echo "$contents" | ./extract_headers "ID")"
 ' > "$3"
 echo "tag='$1'" >> "$3"
 

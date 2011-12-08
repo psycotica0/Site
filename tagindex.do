@@ -18,8 +18,8 @@ ls *.mime | sed 's/.mime$//' | while read file; do
 	# Need augmented to get the ordering
 	# If, though, a new tag was added, then augmented will be different, so we'll be rerun to regenerate the index
 	redo-ifchange "$file.augmented"
-	c_time="$(sed -n 's/Date-Created: *\(.*\)/\1/p' < "$file.augmented")"
-	for tag in $(grep '^Tag:' < "$file.augmented" | sed 's/^Tag://'); do
+	c_time="$(./extract_headers "Date-Created" < "$file.augmented")"
+	for tag in $(./extract_headers "Tag" < "$file.augmented"); do
 		echo "$c_time $tag $file" >> $3
 	done
 done

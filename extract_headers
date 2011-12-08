@@ -1,0 +1,9 @@
+#!/bin/sh
+
+header="$1"
+
+headers="$(sed '/^$/,$d' | grep "^$header:")"
+
+values="$(echo "$headers" | cut -d ':' -f 2- | sed 's/^ *\(\( *[^ ][^ ]*\)*\) *$/\1/g')"
+
+echo "$values"

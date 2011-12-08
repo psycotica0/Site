@@ -31,9 +31,9 @@ echo "	<icon>$icon</icon>"
 redo-ifchange "tagindex"
 grep "^$tag " < "tagindex" | cut -d ' ' -f 2- | tac | while read file; do
 	redo-ifchange "$file.converted"
-	title="$(sed -n 's/Title:[ 	]*\(.*\)/\1/p' < "$file.converted")"
-	mod_date="$(sed -n 's/Date-Modified:[ 	]*\(.*\)/\1/p' < "$file.converted")"
-	create_date="$(sed -n 's/Date-Created:[ 	]*\(.*\)/\1/p' < "$file.converted")"
+	title="$(./extract_headers "Title" < "$file.converted")"
+	mod_date="$(./extract_headers "Date-Modified" < "$file.converted")"
+	create_date="$(./extract_headers "Date-Created" < "$file.converted")"
 	echo '	<entry>'
 	echo "		<link rel='alternate' type='text/html' href='$this_tag/$file.html' />"
 	echo "		<id>$this_tag/$file.html</id>"

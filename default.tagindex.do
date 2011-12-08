@@ -44,7 +44,7 @@ echo '<ol>'
 redo-ifchange "tagindex"
 grep "^$tag " < "tagindex" | cut -d ' ' -f 2- | tac | while read file; do
 	redo-ifchange "$file.converted"
-	title="$(sed -n 's/Title:[ 	]*\(.*\)/\1/p' < "$file.converted")"
+	title="$(./extract_headers "Title" < "$file.converted")"
 	echo '<li>'
 	echo "<h2> <a href='$file.html'>$title</a> </h2>"
 	# Now spit out the body
