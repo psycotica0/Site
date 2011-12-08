@@ -10,41 +10,10 @@ body {
 	text-align: right;
 }
 
-#menu {
-	border-left: thin solid white;
-	border-right: thin solid white;
-	border-top: thin solid white;
-}
-
-#menu ul {
-	list-style-type: none;
-	margin: 0;
-}
-
-#menu li a {
-	color: white;
-	text-decoration: none;
-
-	padding-left: 2em;
-	padding-right: 2em;
-	margin-right: 1em;
-
-	border-left: thin solid white;
-	border-right: thin solid white;
-}
-
-#menu li {
-	display: inline;
-}
-
-#menu li a:hover {
-	background-color: white;
-	color: black;
-}
-
 #content {
 	border: thin solid white;
 	padding: 5%;
+	padding-bottom: 1em;
 }
 
 #content h1 {
@@ -52,39 +21,15 @@ body {
 	padding-top: 0;
 
 	margin-left: -5%;
+	margin-right: 50%;
 
 	border-bottom: thin solid white;
-}
-
-#content h2 {
-	border-left: thin solid white;
-	border-top: thin solid white;
-
-	margin-left: -1em;
-	padding-left: 1em;
-}
-
-#content h3 {
-	border-left: thin solid white;
-	border-top: thin solid white;
-
-	padding-left: 1em;
 }
 
 #content a {
 	color: white;
 
-	text-decoration: none;
-
-	border-top: thin solid white;
-	border-bottom: thin solid white;
-}
-
-#content a:hover {
-	border-left: thin solid white;
-	border-right: thin solid white;
-	border-top: none;
-	border-bottom: none;
+	text-decoration: underline;
 }
 
 P { 
@@ -92,17 +37,48 @@ P {
 	margin-bottom: 0.5em;
 }
 
-#bio {
-	margin-bottom: 1em;
+#navigation a {
+	color: white;
+	text-decoration: none;
 }
-
-#bio .nickname {
-	/* So, this is kind of weird. */
-	/* Mostly, it seemed like good metadata, but it's redundant to put it on screen. */
-	display: none;
-}
-
-#recent h1 {
-	border-top: thin white solid;
+#navigation [rel="prev"] {
+	padding-left: 1em;
+	padding-right: 1em;
+	float: left;
+	border-right: thin white solid;
+	border-left: thin white solid;
 	border-bottom: thin white solid;
+}
+#navigation [rel="next"] {
+	padding-left: 1em;
+	padding-right: 1em;
+	float: right;
+	border-right: thin white solid;
+	border-left: thin white solid;
+	border-bottom: thin white solid;
+}
+
+#tags {
+	float: right;
+	border: thin white solid;
+	margin-left: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 1em;
+}
+
+#tags li a {
+	color: white;
+	text-decoration: none;
+}
+
+#tags li.current {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#dates {
+	border-top: thin white solid;
+	padding-bottom: 0;
+	margin-bottom: 0;
 }

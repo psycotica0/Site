@@ -41,6 +41,7 @@ if [ -n "$next" ]; then
 fi
 echo "</div>"
 echo "<div id=\"tags\">"
+echo "Tags:"
 echo "<ul>"
 for t in $tags; do
 	if [ "$t" = "$tag" ]; then
@@ -52,6 +53,8 @@ done
 echo "</ul>"
 echo "</div>"
 echo "<div id=\"content\">"
+echo "<h1> $title </h1>
+$body"
 echo "<dl id=\"dates\">"
 if [ "$created" = "$modified" ]; then
 	echo "<dt> Published: </dt> <dd> $created </dd>"
@@ -59,10 +62,8 @@ else
 	echo "<dt> Originally Published: </dt> <dd> $created </dd>"
 	echo "<dt> Last Updated: </dt> <dd> $modified </dd>"
 fi
-echo "</dl>
-<h1> $title </h1>
-$body
-</div>
+echo "</dl>"
+echo "</div>
 </body>
 </html>"
 ' >> "$3"
