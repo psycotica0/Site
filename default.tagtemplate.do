@@ -8,6 +8,8 @@ title="$(echo "$contents" | sed -n "/^Title:/s/^Title:[ 	]//p")"
 body="$(echo "$contents" | sed "1,/^$/d")"
 next="$(echo "$contents" | sed -n "/^Next-Link:/s/^Next-Link:[ 	]*//p")"
 prev="$(echo "$contents" | sed -n "/^Previous-Link:/s/^Previous-Link:[ 	]*//p")"
+created="$(echo "$contents" | sed -n "/^Date-Created:/s/^Date-Created:[ 	]*//p")"
+modified="$(echo "$contents" | sed -n "/^Date-Modified:/s/^Date-Modified:[ 	]*//p")"
 id="$(echo "$contents" | sed -n "/^ID:/s/^ID:[ 	]*//p")"
 ' > "$3"
 echo "tag='$1'" >> "$3"
@@ -49,7 +51,15 @@ for t in $tags; do
 done
 echo "</ul>"
 echo "</div>"
-echo "<div id=\"content\">
+echo "<div id=\"content\">"
+echo "<dl id=\"dates\">"
+if [ "$created" = "$modified" ]; then
+	echo "<dt> Published: </dt> <dd> $created </dd>"
+else
+	echo "<dt> Originally Published: </dt> <dd> $created </dd>"
+	echo "<dt> Last Updated: </dt> <dd> $modified </dd>"
+fi
+echo "</dl>
 <h1> $title </h1>
 $body
 </div>
