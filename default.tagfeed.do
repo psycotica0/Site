@@ -8,7 +8,7 @@ icon="http://psycoti.ca/0/static/avatar.png"
 title="Tag: $tag"
 home="http://psycoti.ca/0"
 this_tag="$home/$tag"
-this_feed="$this_tag/feed.atom"
+this_feed="$this_tag/index.atom"
 
 atom_format="%Y-%m-%dT%H:%M:%SZ"
 

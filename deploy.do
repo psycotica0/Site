@@ -23,5 +23,5 @@ ls *.tagfeed | while read line; do
 	tag="$(basename "$line" ".tagfeed")"
 	# Just a precaution
 	mkdir -p "$tag"
-	cp "$line" "$tag/feed.atom"
+	cp "$line" "$tag/index.atom"
 done

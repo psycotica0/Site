@@ -11,7 +11,7 @@ echo '</title>
 <link rel="stylesheet" href="static/style.css" />
 <link rel="openid.server" href="http://id.psycoti.ca/" />
 <link rel="openid.delegate" href="http://id.psycoti.ca/" />
-<link rel="alternate" type="application/atom+xml" href="main/feed.atom" />
+<link rel="alternate" type="application/atom+xml" href="main/index.atom" />
 </head>
 <body>
 <div id="header">
