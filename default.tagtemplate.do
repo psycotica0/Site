@@ -45,7 +45,7 @@ echo "Tags:"
 echo "<ul>"
 for t in $tags; do
 	if [ "$t" = "$tag" ]; then
-		echo "<li class=\"current\"> <a rel="index" href=\"index.html\"> $t </a> </li>"
+		echo "<li class=\"current\"> <a rel=\"index\" href=\"index.html\"> $t </a> </li>"
 	else
 		echo "<li> <a href=\"../$t/index.html\"> $t </a> </li>"
 	fi
