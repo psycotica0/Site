@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Turn all lines into spans with class "line"
+# Then put <p> around each group.
+# Not ideal, but good enough for now.
+
+echo '<p class="stanza">'
+cat | sed 's/&/\&amp;/g' | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g' | sed 's_^$_</p>&<p class="stanza">_' | sed '/^[^<]/s_.*_<span class="line">&</span>_'
+echo '</p>'
