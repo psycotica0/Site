@@ -21,7 +21,7 @@ At this point I'm going to talk a bit about GitSite.
 So, the basic idea here was to make a site engine for publish articles (Notice how I'm avoiding the term 'blog'?) that was based off static files and git.
 
 So, all of the pages that are being served here are static. All of the html, conversion, templating, etc was all done on the server prior to it being available.
-By the time it's accessable, it's a collection of files with a lot of duplication.
+By the time it's accessible, it's a collection of files with a lot of duplication.
 
 I like that.
 

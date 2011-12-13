@@ -103,7 +103,7 @@ You must therefore change that file to include the structure you want.
 default.tagtemplate.do is slightly more gross. It creates the files that create the blah.tag.html files.
 Other than that, though, you just have to change the markup in it to be the one you want.
 
-It's feasbile that the only changes you'd need to make are removing my data.
+It's feasible that the only changes you'd need to make are removing my data.
 The markup is (I think) pretty standard and most of what I do comes with styling.
 
 == Conclusion ==
@@ -118,6 +118,6 @@ It's more a concept, or idea.
 The scripts in [[http://github.com/psycotica0/redo-blog2]] are what I based the scripts in [[http://github.com/psycotica0/Site]] off, but in the end they are disjoint.
 They're related in concept, but there's no connection between them.
 
-So, if you want to adapt it to work with your site, you can start with either this site, or the redo-blog2 repo, but it's likely there won't be a lot of cross polination.
+So, if you want to adapt it to work with your site, you can start with either this site, or the redo-blog2 repo, but it's likely there won't be a lot of cross pollination.
 
 I'm alright with that for now.
