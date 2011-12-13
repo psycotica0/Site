@@ -30,7 +30,7 @@ echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3
 </head>
 <body>
 <div id=\"header\">
-<h1> <a href=\"http://psycoti.ca/0/\"> psycoti.ca/0/ </a> </h1>
+<h1> <a rel=\"home\" href=\"http://psycoti.ca/0/\"> psycoti.ca/0/ </a> </h1>
 </div>"
 echo "<div id=\"navigation\">"
 if [ -n "$prev" ]; then
@@ -45,22 +45,22 @@ echo "Tags:"
 echo "<ul>"
 for t in $tags; do
 	if [ "$t" = "$tag" ]; then
-		echo "<li class=\"current\"> <a href=\"index.html\"> $t </a> </li>"
+		echo "<li class=\"current\"> <a rel="index" href=\"index.html\"> $t </a> </li>"
 	else
 		echo "<li> <a href=\"../$t/index.html\"> $t </a> </li>"
 	fi
 done
 echo "</ul>"
 echo "</div>"
-echo "<div id=\"content\">"
-echo "<h1> $title </h1>
-$body"
+echo "<div id=\"content\" class=\"hentry\">"
+echo "<h1 class=\"entry-title\"> $title </h1>
+<div class=\"entry-content\">$body</div>"
 echo "<dl id=\"dates\">"
 if [ "$created" = "$modified" ]; then
-	echo "<dt> Published: </dt> <dd> $created </dd>"
+	echo "<dt> Published: </dt> <dd class=\"published\"> $created </dd>"
 else
-	echo "<dt> Originally Published: </dt> <dd> $created </dd>"
-	echo "<dt> Last Updated: </dt> <dd> $modified </dd>"
+	echo "<dt> Originally Published: </dt> <dd class=\"published\"> $created </dd>"
+	echo "<dt> Last Updated: </dt> <dd class=\"updated\"> $modified </dd>"
 fi
 echo "</dl>"
 echo "</div>

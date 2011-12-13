@@ -29,18 +29,18 @@ for t in $tags; do
 done
 echo "</ul></div>"
 
-echo '<div id="content">'
+echo '<div id="content" class="vcard">'
 
-echo '<img src="static/avatar.png" alt="avatar" class="avatar" />
-This is the website of Christopher Vollick.
+echo '<img src="static/avatar.png" alt="avatar" class="avatar photo" />
+This is the website of <span class="fn n"><span class="given-name">Christopher</span> <span class="family-name">Vollick</span></span>.
 <dl>
-<dt> GitHub: </dt> <dd> <a href="https://github.com/psycotica0"> https://github.com/psycotica0 </a> </dd>
-<dt> Email: </dt> <dd> <a href="mailto:0@psycoti.ca"> 0@psycoti.ca </a> </dd>
-<dt> Email: </dt> <dd> <a href="mailto:psycotica0@gmail.com"> psycotica0@gmail.com </a> </dd>
-<dt> XMPP: </dt> <dd> <a href="xmpp:0@psycoti.ca"> 0@psycoti.ca </a> </dd>
-<dt> XMPP: </dt> <dd> <a href="xmpp:psycotica0@gmail.com"> psycotica0@gmail.com </a> </dd>
-<dt> Identi.ca: </dt> <dd> <a href="http://identi.ca/psycotica0"> http://identi.ca/psycotica0 </a> </dd>
-<dt> Twitter: </dt> <dd> <a href="http://twitter.com/psycotica0"> http://twitter.com/psycotica0 </a> </dd>
+<dt> GitHub: </dt> <dd> <a class="url" rel="me" href="https://github.com/psycotica0"> https://github.com/psycotica0 </a> </dd>
+<dt> Email: </dt> <dd> <a class="email" href="mailto:0@psycoti.ca"> 0@psycoti.ca </a> </dd>
+<dt> Email: </dt> <dd> <a class="email" href="mailto:psycotica0@gmail.com"> psycotica0@gmail.com </a> </dd>
+<dt> XMPP: </dt> <dd> <a class="url" href="xmpp:0@psycoti.ca"> 0@psycoti.ca </a> </dd>
+<dt> XMPP: </dt> <dd> <a class="url" href="xmpp:psycotica0@gmail.com"> psycotica0@gmail.com </a> </dd>
+<dt> Identi.ca: </dt> <dd> <a class="url" rel="me" href="http://identi.ca/psycotica0"> http://identi.ca/psycotica0 </a> </dd>
+<dt> Twitter: </dt> <dd> <a class="url" rel="me" href="http://twitter.com/psycotica0"> http://twitter.com/psycotica0 </a> </dd>
 </dl>
 
 <p>

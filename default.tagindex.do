@@ -17,7 +17,7 @@ echo '</title>
 </head>
 <body>
 <div id="header">
-<h1> <a href="http://psycoti.ca/0/"> psycoti.ca/0/ </a> </h1>
+<h1> <a rel="home" href="http://psycoti.ca/0/"> psycoti.ca/0/ </a> </h1>
 </div>
 '
 
@@ -45,10 +45,14 @@ redo-ifchange "tagindex"
 grep "^$tag " < "tagindex" | cut -d ' ' -f 2- | tac | while read file; do
 	redo-ifchange "$file.converted"
 	title="$(./extract_headers "Title" < "$file.converted")"
-	echo '<li>'
-	echo "<h2> <a href='$file.html'>$title</a> </h2>"
+	echo '<li class="hentry">'
+	echo "<h2 class='entry-title'> <a rel='bookmark' href='$file.html'>$title</a> </h2>"
+
+	echo '<div class="entry-content">'
 	# Now spit out the body
 	sed '1,/^$/d' < "$file.converted"
+	echo '</div>'
+
 	echo '</li>'
 done
 
