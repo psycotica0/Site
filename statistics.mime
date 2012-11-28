@@ -26,19 +26,17 @@ So, most people, when presented with this go through a thought process like the 
 Not bad reasoning.
 
 The real answer is 23.
-I'll explain why that is after a covering a little bit of the basics of probability.
+I'll explain why that is after covering a little bit of the basics of probability.
 
 == Probability Basics ==
 
 3 in 5 means that, if you do the experiment a huge number of times, then about 3/5th of that should be the given outcome.
 
-#### TODO: Mention the conversion from odds to probaility, and mention probability being between 0 and 1.
-
 That's all.
-If you do an something 5 times and don't get 3 of the given outcome, then that doesn't necessarily mean the probability is wrong.
+If you do something 5 times and don't get 3 of the given outcome, then that doesn't necessarily mean the probability is wrong.
 
 If you do something 50 times and never get a success, that still isn't necessarily wrong.
-It does provide evidence that perhaps it's not the most likely probability, but that's not what I'm talking about.
+It does provide evidence that perhaps it's not the most likely probability, but that's a whole other topic.
 
 There's actually no way to prove or even demonstrate that a given probability is wrong.
 
@@ -48,8 +46,11 @@ Also, if something has a probability of 1 in 1 million, that doesn't mean that i
 Something can have a probability of 1 in 1 million and still happen on the first attempt.
 It can happen on the next attempt too, then not for another 199 999 998 times and be exactly as predicted by the math.
 
-Something that happens along with something else is multiplication.
-Or is addition.
+In this representation of probability it's computed as (the number of times the interesting outcome can occur) / (the total number of outcomes), and since there can't be more interesting outcomes than total outcomes, this number ranges from 0 to 1.
+0 means impossible, and "1" means certain, but without rounding, neither of those values actually come up in most cases.
+Often the best you'll get is 0.000000001, which is very unlikely but not impossible, or 0.999999999 which is very likely but not certain.
+
+Two things happening together is represented by multiplication, whereas having either one thing happen or another is represented by addition.
 
 Take, for example, rolls of a fair die:
 Each side of the die has a 1 in 6 chance.
@@ -61,6 +62,15 @@ If you want the probability that the opposite of something happens, you just nee
 
 For example, the probability that two dice each come up 1 is (1/36).
 The probability that doesn't happen is (1 - (1/36) = 35/36).
+
+Be aware, though, that odds and probability both represent the same thing, but work differently.
+If something has a 3 in 5 chance, that represents a probability of (3/5).
+3 successes for every 5 attempts.
+
+If, though, something has 3 to 5 odds, that represents 3 successes vs 5 failures.
+That means there's actually 8 outcomes (3 success + 5 fail), which represents a probability of 3/8.
+
+A 3 in 5 probability is the same as 3 to 2 odds.
 
 == The Birthday Paradox Revisited ==
 
@@ -83,12 +93,12 @@ The third person has (363/365).
 So, to compute the probability that three people have unique birthdays we have (365 * 364 * 363) / (365 * 365 * 365), which is 0.99
 That's pretty likely.
 
-So, the probability that there's one or more of them that share a birthday is (1 - 0.99 = 0.01).
+The probability that there's one or more of them that share a birthday is (1 - 0.99 = 0.01).
 
 That proabability rises quickly, though, as we add more people.
 
 |= Number of People |= Probability of Sharing a Birthday |
-|  1 | 0 |
+|  1 | 0.000 |
 |  2 | 0.003 |
 |  3 | 0.008 |
 |  4 | 0.016 |
@@ -116,31 +126,27 @@ So, we can see that by 15 people we've got approximately a 25% chance that there
 
 == The Weather ==
 
-Most people take "70% chance of rain" as "It's going to rain"
-Anything above 60, really.
+The weather is probably the place where people clash with probability the most in their day-to-day lives.
 
-That's not what it means.
+It seems like most people take "70% chance of rain" as "It's going to rain".
+Anything above 60, really, is considered a "yes", and people become irate when it doesn't rain as predicted.
 
-It means there's a 7 in 10 chance that it will rain on that day.
+Unfortunately, that's not what it means.
+What it does mean is that there's a 7 in 10 chance that it will rain on that day.
 
 Even if we ignore what I said in the section on basics, that means that if he predicts 70% chance of rain for 10 days in a month, and 3 of those are sunny, then he was exactly right.
+In fact, if it rained every day he predicted a 70% chance of rain he'd actually be wrong.
 
-If it rained every day he predicted 70% of rain, he'd actually be wrong.
+The same obviously goes for "30% chance of rain", which doesn't mean "It will not rain."
 
 == The Lottery ==
 
-Actually do raffle, it's easier.
+In this case I'm going to talk about raffles, because it's easier to reason about things that exactly one person always wins.
 
-Dual nature.
-
-One on hand if there are one million raffle tickets sold, then each person has a one in one million chance.
-That's small.
-
-But, there's a one in one chance that one of them will be the winner.
-
-Someone always wins, and that person always has a one in one million chance.
-
-Depending on perspective, then, things are very different.
+Depending on the perspective you take in the raffle, the outcomes look very different.
+One on hand if there are one million raffle tickets sold, then each ticket has a one in one million chance of being chosen.
+That's considered a small probability.
+But, it's certain that one of them will be the winner, and that winner always had a one in one million chance.
 
 The person who won likely wasn't expecting to be the one to win, and shouldn't have.
 Like the weather, when people hear that something has a one in one million chance of happening, they interpret that as "impossible".
@@ -150,43 +156,95 @@ From the system's perspective, though, someone had to win, and each person was e
 The fact that 1 person won, and 999 999 people did not doesn't seem weird or magical to it.
 That's the only way it could have gone.
 
+It's difficult to reconcile these two views, so I won't try.
+They're both true, and one just needs to think about things from both sides before jumping to any conclusions.
+
 == Implicit Assumptions ==
 
-Parable about getting Heads - Heads - Heads, and the odds of the next toss.
+Let's say you're flipping a coin 4 times. You flip it the first 3 times and get Head, Head, Head.
+At this point people tend to feel like the next one has to be a Tail, since 4 Heads seems much less likely.
 
-Feels like Tails should be more likely because one Tails in four throws seems more likely.
-
-Some basis for this feeling.
-Probability of getting four heads is (1/16), but the probability of getting a 3 heads and a tails is (1/4), four times as likely.
-
-Seems, then, like the odds of getting Tails on the next toss are better than the odds of getting a Heads.
+There is some basis for this feeling.
+The probability of getting four Heads is (1/16), but the probability of getting a 3 Heads and a Tail is (1/4). That's four times as likely!
+It would seem, then, like the odds of getting a Tail on the next toss are better than the odds of getting a Head.
 
 There's a hidden assumption in here, though.
-We've already got 3 heads.
-The reason that 3 heads and a tails is four times as likely, is because there are 4 equally likely ways that can happen:
+We've already got 3 Heads.
+The reason that 3 Heads and a Tail is four times as likely is because there are 4 equally likely ways that can happen:
 THHH + HTHH + HHTH + HHHT = (1/16) + (1/16) + (1/16) + (1/16) = 4/16 = 1/4.
 
 Obviously, though, only one of those are applicable to our current situation.
 THH, HTH, and HHT didn't happen. We're at HHH.
-There's only one outcome there, though, that has a Tails in it, and the probability of it is 1/16, same as HHHH.
+There's only one outcome there, though, that has a Tail in it, and the probability of it is 1/16, same as HHHH.
 
-== Miracles and Coincidence ==
+== Miracles and Coincidences ==
 
-Two choices, get hit by a car, don't get hit by a car.
-Many people get hit by a car, but not all of them.
+You're walking down the street and before crossing the road you notice something on the ground and pick it up.
+Just then a car flies past and you think "Wow! If I hadn't bent down to collect this thing, I'd have been hit by a car and died" and it's a miracle.
 
-Draw similarities back to Lottery.
+Let's look at the potential outcomes, though, and their reactions.
 
-If you got hit by a car you wouldn't call it a miracle, and you might be dead.
-If you don't, though, it becomes are miracle.
-Therefore we only have miracles and accidents.
+If you're walking down the road and you don't get hit by a car you consider this a normal day.
+Nothing weird or magical occured here, and this day is mostly forgettable.
 
-Similarly, every day there are hundreds of things that could go wrong, but don't.
-Those days are normal.
-As soon as one thing goes wrong, though, the question is "What are the odds of that?", don't remember the thousands of times it hasn't happened to you alone.
+Let's say you're walking down the road and you get hit by a car and die.
+In this case no one uses the word miracle, it's an accident.
+Whatever you did that day is insignificant, and in many cases no one even knows what you did.
 
-Then expand that to all people.
-Stats say 1 in N is the probability of a given person getting hit by lightening in a year.
-Like the Lottery, though, when that person gets hit they are confused as to how something so unlikely could happen to them.
-Every other year, though, the didn't ask how it was that they didn't get hit by lightning this year.
-They just accepted that it was something that happened to other people.
+If you're walking down the road and get hit by a car, but are only injured, then this is an awful day.
+It's also never really called a miracle, but it's possible for you to maybe draw a line from your activities before you were hit and the actual accident.
+
+If you're walking down the road and you almost get hit by a car, but are narrowly missed, then it's considered a miracle.
+
+Like the lottery, these are all of the choices.
+From moment to moment one of these has to be happening, and most of the time you're not getting hit by cars.
+
+When someone gets hit by a car, though, they tend to feel like something unlikely has occured, but they often fail to consider every other time they walked down the street and didn't get hit.
+And that's just them, what about every other pedestrian that day that didn't get hit by cars?
+Did each of them consider that day to have been a miracle because they managed to walk from one place to another without being killed? Likely not, since that's expected.
+
+Looking at it as three outcomes: Nothing, Miracle, Accident; where no on considers Nothing, there are only Miracles and Accidents.
+And, really, Accidents are just miracles that aren't deemed positive.
+
+The other example that comes up is things like "Wow, I was just thinking of you when you called me! WEIRD!"
+There are two potential areas here.
+
+If you're thinking of someone and they call, then it's super coincidental.
+So much so that perhaps magic was involved.
+
+If you're not thinking of someone when they call, then it's just a phone call. There are lots of those everyday, the event is not significant, and an hour from now you may not even remember that you took this call at all.
+
+The real issue is that probability is based on numbers.
+If there's a 3/5 chance of something happening and you do 5 trials, you expect about 3 successes.
+If you do 50 trials, you expect about 30.
+
+In these cases, though, people seem to grossly underestimate the number of trials. Despite potentially answering 100 phone calls in a month, when something happens it can seem like it happens far more often than it does if you only feel like you've taken 3 calls this month.
+
+Now, like the lottery, I've been mostly speaking about the system here.
+Let's say that 1 person is hit by a car every 3 days in some area, when you get hit that's not unlikely from the world's perspective.
+If, though, someone were to ask "Why me?", then that's potentially a valid question.
+Even if everyone who was hit thought that, the people who weren't hit rarely ask themselves "Why not me?"
+They just assume it's something that happens to other people.
+
+If I may, I'd also like to apply this to prayer.
+Let's say a person becomes ill, and people pray that they will recover.
+There are now two options: they recover, in which case the prayer is deemed sucessful; or they don't recover.
+
+I'm not saying that prayer is ineffective, but as a skeptic on the outside, I see it as a bias.
+Either the prayer was critical, or it was just their time.
+
+It's even easier on longer term wishes.
+If one wishes every day for their entire life that they win the lottery, then any time they don't win is a normal day, and they day they do it's all because they prayed for it every day.
+The days they prayed to win and didn't just fall away, and aren't significant in the story of their life.
+
+== Conclusions ==
+
+My intention here isn't to disprove miracles, or claim that people should be happy when it rains during their sunny plans.
+
+In the end, it comes down to random occurences, but what actually guides the outcome is up to you to decide.
+I happen to believe that the outcomes are due to physical processes which have no concept of "Our interests", but one could easily also believe that there is an interested party out there guiding the outcomes.
+
+I can't prove that there isn't, and for most of what I've said it doesn't matter whether there is or not.
+I'm more just collecting a few of the things that I've heard people say, or claim, that have seemed, to me, to have been potentially rooted in a misguiding of statistical understanding.
+
+I'm sorry if I've enraged anyone.
