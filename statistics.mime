@@ -11,14 +11,28 @@ The real problem is that humans seem to have a gut instinct for stats, but that 
 This leads to the tricky situation where a random person will attempt to interpret a statistic, or generate a statistic, and feel like they're probably pretty close.
 Sometimes someone who even knows that math will second guess it because it just doesn't feel right.
 
+I'm going to attempt, in this article, to cover a collection of cases where I've seen people often have the wrong idea.
+
 == The Birthday Paradox ==
 
-Brief specification of the paradox.
-Both the setup and the seamingly ridiculous result.
+The Birthday Paradox is one of the simplest and easiest examples of how wrong a person's gut instinct can be.
+It goes something like this: How many people need to be in a group to have a 50% chance that two or more of them share a birthday?
+
+So, most people, when presented with this go through a thought process like the following:
+  Alright, the typical year has 365 days. A person can be born of any of those days evenly.
+  We want a 50% chance of collision, so I'd guess (365/2) = 182ish.
+  So, I'd guess about 182.
+
+Not bad reasoning.
+
+The real answer is 23.
+I'll explain why that is after a covering a little bit of the basics of probability.
 
 == Probability Basics ==
 
 3 in 5 means that, if you do the experiment a huge number of times, then about 3/5th of that should be the given outcome.
+
+#### TODO: Mention the conversion from odds to probaility, and mention probability being between 0 and 1.
 
 That's all.
 If you do an something 5 times and don't get 3 of the given outcome, then that doesn't necessarily mean the probability is wrong.
@@ -41,11 +55,64 @@ Take, for example, rolls of a fair die:
 Each side of the die has a 1 in 6 chance.
 So, the probability of rolling either a 1 or a 2 is (1/6 + 1/6 = 2/6).
 This makes sense. 
-The probability of rolling a 1, then a 2 is (1/6 * 1/6 = 1/36).
+The probability of rolling a 1, followed by a 2 is (1/6 * 1/6 = 1/36).
+
+If you want the probability that the opposite of something happens, you just need to subtract it from 1.
+
+For example, the probability that two dice each come up 1 is (1/36).
+The probability that doesn't happen is (1 - (1/36) = 35/36).
 
 == The Birthday Paradox Revisited ==
 
-Work through of the math showing why the answer is what it is.
+So, now that we've got the basics of probability, let's see if we can work out why the answer to the birthday paradox is what it is.
+
+First off, assumptions.
+I'm assuming that people are born with an equal probability on any day of the year.
+That's not quite true in practise, there is a clustering in certain areas of the year, but that would make it more likely that people would have the same birthday, not less, so that's acceptable.
+
+First off, calculating the probability that a group of people all have unique birthdays is easier than computing the probability that they have 1 or more collisions.
+Luckily, since "having everyone have a different birthday" and "having everyone not have a unique birthday" are opposite outcomes, we can subtract that probability from 1 and get the value we actually want. 
+
+So, the probability of the first person having a unique birthday is (365/365 = 1).
+That makes sense, since there's only one of them.
+
+The second person has only 364 days to choose from (since it has to be different from the first), which leaves a probability of (364/365).
+
+The third person has (363/365).
+
+So, to compute the probability that three people have unique birthdays we have (365 * 364 * 363) / (365 * 365 * 365), which is 0.99
+That's pretty likely.
+
+So, the probability that there's one or more of them that share a birthday is (1 - 0.99 = 0.01).
+
+That proabability rises quickly, though, as we add more people.
+
+|= Number of People |= Probability of Sharing a Birthday |
+|  1 | 0 |
+|  2 | 0.003 |
+|  3 | 0.008 |
+|  4 | 0.016 |
+|  5 | 0.027 |
+|  6 | 0.040 |
+|  7 | 0.056 |
+|  8 | 0.074 |
+|  9 | 0.094 |
+| 10 | 0.117 |
+| 11 | 0.141 |
+| 12 | 0.167 |
+| 13 | 0.194 |
+| 14 | 0.223 |
+| 15 | 0.252 |
+| 16 | 0.283 |
+| 17 | 0.315 |
+| 18 | 0.346 |
+| 19 | 0.379 |
+| 20 | 0.411 |
+| 21 | 0.443 |
+| 22 | 0.475 |
+| 23 | 0.507 |
+
+So, we can see that by 15 people we've got approximately a 25% chance that there will be a shared birthday, and by 23 people we've reached 50%.
 
 == The Weather ==
 
