@@ -91,3 +91,14 @@ P {
 .stanza .line {
 	display: block;
 }
+
+table {
+	border: thin white solid;
+	border-collapse: collapse;
+}
+
+th,td {
+	border: thin white solid;
+	padding-left: 2em;
+	padding-right: 2em;
+}
