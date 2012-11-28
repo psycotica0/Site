@@ -1,2 +1,10 @@
 # Since we use redo, ignore its data
 .redo/
+*.augmented
+*.converted
+*.*.html
+*.tagfeed
+*.tagindex
+*.tagtemplate
+tagindex
+index.html
