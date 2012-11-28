@@ -1,0 +1,125 @@
+Title: Statistics
+Content-Type: text/creole
+Tag: main
+Tag: article
+
+I'm of the opinion that Statistics are one of the things that we as humans have the most trouble with.
+The problem isn't that it's hard;
+there are a lot of things that are harder than Statistics.
+The real problem is that humans seem to have a gut instinct for stats, but that gut instinct is way off more often than not.
+
+This leads to the tricky situation where a random person will attempt to interpret a statistic, or generate a statistic, and feel like they're probably pretty close.
+Sometimes someone who even knows that math will second guess it because it just doesn't feel right.
+
+== The Birthday Paradox ==
+
+Brief specification of the paradox.
+Both the setup and the seamingly ridiculous result.
+
+== Probability Basics ==
+
+3 in 5 means that, if you do the experiment a huge number of times, then about 3/5th of that should be the given outcome.
+
+That's all.
+If you do an something 5 times and don't get 3 of the given outcome, then that doesn't necessarily mean the probability is wrong.
+
+If you do something 50 times and never get a success, that still isn't necessarily wrong.
+It does provide evidence that perhaps it's not the most likely probability, but that's not what I'm talking about.
+
+There's actually no way to prove or even demonstrate that a given probability is wrong.
+
+But, in general, you should assume that in the long run, when you do something 50 times, there should be close to 30 successes, and when you do something 5000 times there should be even closer to 3000 successes.
+
+Also, if something has a probability of 1 in 1 million, that doesn't mean that it will only happen on the 1 millionth attempt.
+Something can have a probability of 1 in 1 million and still happen on the first attempt.
+It can happen on the next attempt too, then not for another 199 999 998 times and be exactly as predicted by the math.
+
+Something that happens along with something else is multiplication.
+Or is addition.
+
+Take, for example, rolls of a fair die:
+Each side of the die has a 1 in 6 chance.
+So, the probability of rolling either a 1 or a 2 is (1/6 + 1/6 = 2/6).
+This makes sense. 
+The probability of rolling a 1, then a 2 is (1/6 * 1/6 = 1/36).
+
+== The Birthday Paradox Revisited ==
+
+Work through of the math showing why the answer is what it is.
+
+== The Weather ==
+
+Most people take "70% chance of rain" as "It's going to rain"
+Anything above 60, really.
+
+That's not what it means.
+
+It means there's a 7 in 10 chance that it will rain on that day.
+
+Even if we ignore what I said in the section on basics, that means that if he predicts 70% chance of rain for 10 days in a month, and 3 of those are sunny, then he was exactly right.
+
+If it rained every day he predicted 70% of rain, he'd actually be wrong.
+
+== The Lottery ==
+
+Actually do raffle, it's easier.
+
+Dual nature.
+
+One on hand if there are one million raffle tickets sold, then each person has a one in one million chance.
+That's small.
+
+But, there's a one in one chance that one of them will be the winner.
+
+Someone always wins, and that person always has a one in one million chance.
+
+Depending on perspective, then, things are very different.
+
+The person who won likely wasn't expecting to be the one to win, and shouldn't have.
+Like the weather, when people hear that something has a one in one million chance of happening, they interpret that as "impossible".
+So, when the "1" comes up, and they get the unlikely result, they see something they thought impossible come to be, and assume something magical helped them out.
+
+From the system's perspective, though, someone had to win, and each person was equally likely.
+The fact that 1 person won, and 999 999 people did not doesn't seem weird or magical to it.
+That's the only way it could have gone.
+
+== Implicit Assumptions ==
+
+Parable about getting Heads - Heads - Heads, and the odds of the next toss.
+
+Feels like Tails should be more likely because one Tails in four throws seems more likely.
+
+Some basis for this feeling.
+Probability of getting four heads is (1/16), but the probability of getting a 3 heads and a tails is (1/4), four times as likely.
+
+Seems, then, like the odds of getting Tails on the next toss are better than the odds of getting a Heads.
+
+There's a hidden assumption in here, though.
+We've already got 3 heads.
+The reason that 3 heads and a tails is four times as likely, is because there are 4 equally likely ways that can happen:
+THHH + HTHH + HHTH + HHHT = (1/16) + (1/16) + (1/16) + (1/16) = 4/16 = 1/4.
+
+Obviously, though, only one of those are applicable to our current situation.
+THH, HTH, and HHT didn't happen. We're at HHH.
+There's only one outcome there, though, that has a Tails in it, and the probability of it is 1/16, same as HHHH.
+
+== Miracles and Coincidence ==
+
+Two choices, get hit by a car, don't get hit by a car.
+Many people get hit by a car, but not all of them.
+
+Draw similarities back to Lottery.
+
+If you got hit by a car you wouldn't call it a miracle, and you might be dead.
+If you don't, though, it becomes are miracle.
+Therefore we only have miracles and accidents.
+
+Similarly, every day there are hundreds of things that could go wrong, but don't.
+Those days are normal.
+As soon as one thing goes wrong, though, the question is "What are the odds of that?", don't remember the thousands of times it hasn't happened to you alone.
+
+Then expand that to all people.
+Stats say 1 in N is the probability of a given person getting hit by lightening in a year.
+Like the Lottery, though, when that person gets hit they are confused as to how something so unlikely could happen to them.
+Every other year, though, the didn't ask how it was that they didn't get hit by lightning this year.
+They just accepted that it was something that happened to other people.
