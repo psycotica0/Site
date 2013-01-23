@@ -8,3 +8,5 @@
 *.tagtemplate
 tagindex
 index.html
+*/
+!static/
